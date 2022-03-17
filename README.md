@@ -9,7 +9,7 @@ To install Node Exporter on Target servers:
 
 sudo useradd node_exporter -s /sbin/nologin
 
-wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
 
 tar xvfz node_exporter-*.*-amd64.tar.gz
 

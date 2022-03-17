@@ -6,6 +6,7 @@ To install Grafana + Prometheus:
 
 
 To install Node Exporter on Target servers:
+
 sudo useradd node_exporter -s /sbin/nologin
 
 wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz

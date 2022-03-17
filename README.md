@@ -13,7 +13,7 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_e
 
 tar xvfz node_exporter-*.*-amd64.tar.gz
 
-sudo mv node_exporter-*.*-amd64/node_exporter node_exporter
+sudo mv node_exporter-*.*-amd64/ node_exporter
 
 sudo cp node_exporter /usr/sbin/
 

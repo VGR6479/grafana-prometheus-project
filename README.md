@@ -11,12 +11,11 @@ sudo useradd node_exporter -s /sbin/nologin
 wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz
 tar xvfz node_exporter-*.*-amd64.tar.gz
 sudo mv node_exporter-*.*-amd64/node_exporter node_exporter
-
 sudo cp node_exporter /usr/sbin/
-sudo mv node_exporter.service /etc/systemd/system/
 
+sudo mv node_exporter.service /etc/systemd/system/
 sudo mkdir -p /etc/sysconfig
-sudo touch /etc/sysconfig/node_exporter
+sudo mv node_exporter /etc/sysconfig
 
 sudo systemctl daemon-reload
 sudo systemctl enable node_exporter

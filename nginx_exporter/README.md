@@ -9,4 +9,4 @@ wget https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.
 
 tar xvfz nginx
 
-./nginx-prometheus-exporter -nginx.scrape-uri=http://34.101.149.181:8080/stub_status
+./nginx-prometheus-exporter -nginx.scrape-uri=http://34.101.149.181:8080/stub_status &

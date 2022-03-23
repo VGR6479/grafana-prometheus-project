@@ -5,8 +5,6 @@ https://medium.com/geekculture/monitoring-websites-using-grafana-and-prometheus-
 
 To install Nginx Exporter on Target servers:
 
-sudo useradd node_exporter -s /sbin/nologin
-
 wget https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.10.0/nginx-prometheus-exporter_0.10.0_linux_amd64.tar.gz
 
 tar xvfz nginx

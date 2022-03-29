@@ -13,7 +13,7 @@ cd /opt/postgres_exporter
 sudo cp postgres_exporter /usr/local/bin
 
 sudo vim postgres_exporter.env<br>
-DATA_SOURCE_NAME="postgresql://postgres:postgres@10.184.15.215:9114/?sslmode=disable"<br>
+DATA_SOURCE_NAME="postgresql://postgres:password@10.184.15.215:5432/?sslmode=disable"<br>
 
 sudo useradd -rs /bin/false postgres_exporter
 

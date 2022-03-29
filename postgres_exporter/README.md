@@ -22,17 +22,29 @@ vim /etc/systemd/system/postgres_exporter.service
 
 
 [Unit]
+
 Description=Prometheus exporter for Postgresql
+
 Wants=network-online.target
+
 After=network-online.target
+
 [Service]
+
 User=postgres
+
 Group=postgres
+
 WorkingDirectory=/opt/postgres_exporter
+
 EnvironmentFile=/opt/postgres_exporter/postgres_exporter.env
+
 ExecStart=/usr/local/bin/postgres_exporter --web.listen-address=192.168.56.106:9100 --web.telemetry-path=/metrics
+
 Restart=always
+
 [Install]
+
 WantedBy=multi-user.target
 
 sudo systemctl daemon-reload

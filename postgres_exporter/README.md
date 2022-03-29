@@ -6,7 +6,7 @@ tar -xvzg postgres.....
 
 mv postgres.../ postgres_exporter/
 
-mv postgres_exporter/ /opt/postgres_exporter/
+sudo mv postgres_exporter/ /opt/postgres_exporter/
 
 cd /opt/postgres_exporter
 
@@ -17,8 +17,7 @@ DATA_SOURCE_NAME="postgresql://postgres:postgres@10.184.15.215:9114/?sslmode=dis
 
 sudo useradd -rs /bin/false postgres_exporter
 
-vim /etc/systemd/system/postgres_exporter.service
-
+sudo vim /etc/systemd/system/postgres_exporter.service
 
 [Unit]<br>
 Description=Prometheus exporter for Postgresql<br>

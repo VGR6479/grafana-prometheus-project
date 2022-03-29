@@ -2,9 +2,16 @@ https://github.com/prometheus-community/postgres_exporter
 
 wget https://github.com/prometheus-community/postgres_exporter/releases/download/v0.10.1/postgres_exporter-0.10.1.linux-amd64.tar.gz
 
-sudo cp postgres_exporter /usr/local/bin
+tar -xvzg postgres.....
+
+mv postgres.../ postgres_exporter/
+
+mv postgres_exporter/ /opt/postgres_exporter/
 
 cd /opt/postgres_exporter
+
+sudo cp postgres_exporter /usr/local/bin
+
 sudo nano postgres_exporter.env
 
 DATA_SOURCE_NAME="postgresql://postgres:postgres@192.168.56.106:5432/?sslmode=disable"

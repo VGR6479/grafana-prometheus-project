@@ -12,40 +12,29 @@ cd /opt/postgres_exporter
 
 sudo cp postgres_exporter /usr/local/bin
 
-sudo vim postgres_exporter.env
+sudo vim postgres_exporter.env<br>
+DATA_SOURCE_NAME="postgresql://postgres:postgres@10.184.15.215:9114/?sslmode=disable"<br>
 
-DATA_SOURCE_NAME="postgresql://postgres:postgres@192.168.56.106:5432/?sslmode=disable"
-
-sudo useradd -rs /bin/false postgres
+sudo useradd -rs /bin/false postgres_exporter
 
 vim /etc/systemd/system/postgres_exporter.service
 
 
-[Unit]
+[Unit]<br>
+Description=Prometheus exporter for Postgresql<br>
+Wants=network-online.target<br>
+After=network-online.target<br>
 
-Description=Prometheus exporter for Postgresql
+[Service]<br>
+User=postgres_exporter<br>
+Group=postgres_exporter<br>
+WorkingDirectory=/opt/postgres_exporter<br>
+EnvironmentFile=/opt/postgres_exporter/postgres_exporter.env<br>
+ExecStart=/usr/local/bin/postgres_exporter --web.listen-address=10.184.15.215:9114 --web.telemetry-path=/metrics<br>
+Restart=always<br>
 
-Wants=network-online.target
-
-After=network-online.target
-
-[Service]
-
-User=postgres
-
-Group=postgres
-
-WorkingDirectory=/opt/postgres_exporter
-
-EnvironmentFile=/opt/postgres_exporter/postgres_exporter.env
-
-ExecStart=/usr/local/bin/postgres_exporter --web.listen-address=192.168.56.106:9100 --web.telemetry-path=/metrics
-
-Restart=always
-
-[Install]
-
-WantedBy=multi-user.target
+[Install]<br>
+WantedBy=multi-user.target<br>
 
 sudo systemctl daemon-reload
 sudo systemctl start postgres_exporter

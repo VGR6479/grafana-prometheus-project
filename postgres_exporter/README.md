@@ -12,13 +12,13 @@ cd /opt/postgres_exporter
 
 sudo cp postgres_exporter /usr/local/bin
 
-sudo nano postgres_exporter.env
+sudo vim postgres_exporter.env
 
 DATA_SOURCE_NAME="postgresql://postgres:postgres@192.168.56.106:5432/?sslmode=disable"
 
 sudo useradd -rs /bin/false postgres
 
-vi /etc/systemd/system/postgres_exporter.service
+vim /etc/systemd/system/postgres_exporter.service
 
 
 [Unit]

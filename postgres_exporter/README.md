@@ -37,7 +37,9 @@ Restart=always<br>
 WantedBy=multi-user.target<br>
 
 sudo systemctl daemon-reload
-sudo systemctl start postgres_exporter
-sudo systemctl enable postgres_exporter
-sudo systemctl status postgres_exporter
 
+sudo systemctl start postgres_exporter
+
+sudo systemctl enable postgres_exporter
+
+sudo systemctl status postgres_exporter
